@@ -28,12 +28,25 @@ export default {
   methods: {
     addItem() {
       if (this.itemName) {
-        this.$store.commit('addItem', {
-          text: this.itemName,
-          rating: 1000,
-          created: Date.now(),
-        });
-        this.itemName = '';
+        if(this.itemName.includes(", ")){
+          this.itemName.split(", ").forEach((i)=>{
+            this.$store.commit('addItem', {
+            text: i,
+            rating: 1000,
+            created: Date.now(),
+          });
+          })
+          
+          this.itemName = '';
+        }else{
+          this.$store.commit('addItem', {
+            text: this.itemName,
+            rating: 1000,
+            created: Date.now(),
+          });
+          this.itemName = '';
+        }
+        
       }
     },
   },
