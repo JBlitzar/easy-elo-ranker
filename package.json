@@ -1,5 +1,7 @@
 {
   "name": "easy-elo-ranker",
+  "homepage": "https://jblitzar.github.io/easy-elo-ranker",
+
   "version": "1.0.0",
   "description": "A Vue-powered web application that helps you to prioritize tasks (or other kind of items) with Elo rating",
   "author": "ark120202",
